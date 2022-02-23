@@ -3,12 +3,12 @@ import { useState } from 'react';
 
 // Iteration 5
 function Search(props) {
+  console.log(props);
   const [inputValue, setinputValue] = useState('');
 
   const handleSearchInput = (e) => {
     setinputValue(e.target.value);
     props.searchProp(e.target.value);
-    console.log(e);
   };
 
   return (

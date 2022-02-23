@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Card, Row, Col, Divider, Input, Button } from 'antd';
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
-import Search from 'antd/lib/transfer/search';
+import Search from './components/Search';
 
 function App() {
   const [foodValues, setFoods] = useState(foods);
@@ -22,12 +22,12 @@ function App() {
   const filterCardList = (str) => {
     let filteredCardList;
 
-    if (str === 'All') {
-      filteredCardList = foodValuesData;
-    } else {
+    if (str.length > 0) {
       filteredCardList = foodValuesData.filter((item) => {
-        return 'hi';
+        return item.name.toLowerCase().includes(str.toLowerCase());
       });
+    } else {
+      filteredCardList = foodValuesData;
     }
 
     setFoods(filteredCardList);
