@@ -9,9 +9,11 @@ function App() {
   const [foodValues, setFoods] = useState(foods);
   return (
     <div className="App">
-      {foodValues.map((item) => {
-        return <FoodBox food={item} />;
-      })}
+      <Row>
+        {foodValues.map((item) => {
+          return <FoodBox food={item} />;
+        })}
+      </Row>
     </div>
   );
 }

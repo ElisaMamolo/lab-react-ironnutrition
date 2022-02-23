@@ -2,7 +2,7 @@ import { Card, Col, Button } from 'antd';
 
 function FoodBox(props) {
   return (
-    <Col>
+    <Col span={8}>
       <Card
         title={props.food.name}
         style={{ width: 230, height: 300, margin: 10 }}
